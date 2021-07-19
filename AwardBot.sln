@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwardBot", "AwardBot\AwardBot.csproj", "{5FA8972F-5F30-44D6-9EF6-C4D59922C2BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwardBot.Handling", "AwardBot.Handling\AwardBot.Handling.csproj", "{23A1F189-95DA-4F7B-855E-8BAB74CA4AA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FA8972F-5F30-44D6-9EF6-C4D59922C2BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA8972F-5F30-44D6-9EF6-C4D59922C2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA8972F-5F30-44D6-9EF6-C4D59922C2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA8972F-5F30-44D6-9EF6-C4D59922C2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23A1F189-95DA-4F7B-855E-8BAB74CA4AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23A1F189-95DA-4F7B-855E-8BAB74CA4AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23A1F189-95DA-4F7B-855E-8BAB74CA4AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23A1F189-95DA-4F7B-855E-8BAB74CA4AA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
