@@ -1,7 +1,10 @@
-﻿namespace AwardBot
+﻿using System.Threading;
+using System.Threading.Tasks;
+
+namespace AwardBot
 {
     internal interface IAwardBot
     {
-        void Start();
+        Task Start(CancellationToken cancellationToken);
     }
 }

@@ -1,8 +1,10 @@
-﻿using AwardBot.Handling.ErrorHandlers;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using AwardBot.Handling.ErrorHandlers;
 using AwardBot.Handling.UpdateHandlers;
 using Telegram.Bot;
 using Telegram.Bot.Extensions.Polling;
-using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types;
 
 namespace AwardBot
 {
@@ -22,9 +24,19 @@ namespace AwardBot
             _botErrorHandler = botErrorHandler;
         }
 
-        public void Start()
+        public async Task Start(CancellationToken cancellationToken)
         {
-            new DefaultUpdateHandler(_botUpdateHandler.UpdateAsync, _botErrorHandler.ProcessAsync, null);
+            var updateHandler = new DefaultUpdateHandler(_botUpdateHandler.UpdateAsync, _botErrorHandler.ProcessAsync);
+
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                Update[] updates = await _telegramBotClient.GetUpdatesAsync(0, 0, 0, null, cancellationToken);
+
+                foreach (var update in updates)
+                {
+                    updateHandler.HandleUpdate(_telegramBotClient, update, cancellationToken);
+                }
+            }
         }
     }
 }
